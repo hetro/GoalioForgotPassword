@@ -36,6 +36,11 @@ class ModuleOptions extends AbstractOptions implements
      * @var int
      */
     protected $resetExpire = 86400;
+
+    /**
+     * @var string
+     */
+    protected $emailFormat = 'text';
     
     /**
      * @var bool
@@ -47,15 +52,15 @@ class ModuleOptions extends AbstractOptions implements
         return $this->emailFromAddress;
     }
 
-	public function getResetEmailSubjectLine() {
+    public function getResetEmailSubjectLine() {
         return $this->resetEmailSubjectLine;
     }
 
-	public function getResetEmailTemplate() {
+    public function getResetEmailTemplate() {
         return $this->resetEmailTemplate;
     }
 
-	public function getEmailTransport() {
+    public function getEmailTransport() {
         return $this->emailTransport;
     }
     
@@ -63,22 +68,22 @@ class ModuleOptions extends AbstractOptions implements
         return $this->validateExistingRecord;
     }
 
-	public function setEmailFromAddress($emailFromAddress) {
+    public function setEmailFromAddress($emailFromAddress) {
         $this->emailFromAddress = $emailFromAddress;
         return $this;
     }
 
-	public function setResetEmailSubjectLine($resetEmailSubjectLine) {
+    public function setResetEmailSubjectLine($resetEmailSubjectLine) {
         $this->resetEmailSubjectLine = $resetEmailSubjectLine;
         return $this;
     }
 
-	public function setResetEmailTemplate($resetEmailTemplate) {
+    public function setResetEmailTemplate($resetEmailTemplate) {
         $this->resetEmailTemplate = $resetEmailTemplate;
         return $this;
     }
 
-	public function setEmailTransport($emailTransport) {
+    public function setEmailTransport($emailTransport) {
         $this->emailTransport = $emailTransport;
         return $this;
     }
@@ -88,7 +93,7 @@ class ModuleOptions extends AbstractOptions implements
         return $this;
     }
 
-	/**
+    /**
      * set user entity class name
      *
      * @param string $userEntityClass
@@ -110,12 +115,28 @@ class ModuleOptions extends AbstractOptions implements
         return $this->passwordEntityClass;
     }
 
-	public function setResetExpire($resetExpire) {
+    public function setResetExpire($resetExpire) {
         $this->resetExpire = $resetExpire;
         return $this;
     }
 
-	public function getResetExpire() {
+    public function getResetExpire() {
         return $this->resetExpire;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEmailFormat() {
+        return $this->emailFormat;
+    }
+
+    /**
+     * @param string $emailFormat
+     * @return $this
+     */
+    public function setEmailFormat($emailFormat) {
+        $this->emailFormat = $emailFormat;
+        return $this;
     }
 }
